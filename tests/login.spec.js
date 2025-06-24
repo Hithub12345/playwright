@@ -1,0 +1,25 @@
+import {test, expect} from "@playwright/test";
+import { Login } from "../pages/login/Login";
+test('Login with Username and Password', async({page})=>{
+    const login = new Login(page);
+    await login.pageLoad();   
+    await login.fillUsername("standard_user");
+    await login.fillPassword("secret_sauce");
+    login.submitButton();
+    await expect(page.locator('text=Logout')).toBeVisible();
+    await expect(page.locator('text=About')).toBeVisible();
+    await expect(page.locator('text=Swag Labs')).toBeVisible();
+    // Locate all `.item` elements under `.inventory-list`
+    const items = page.locator('.inventory_list .inventory_item');
+   // Assert that there are exactly 6 items
+    await expect(items).toHaveCount(6);
+})
+test('Login with Invalid Username and Password', async({page})=>{
+    const login = new Login(page);
+    await login.pageLoad();   
+    await login.fillUsername("user");
+    await login.fillPassword("sauce");
+    login.submitButton();
+    await page.waitForSelector('.error-message-container.error', { state: 'visible' });
+    await expect(page.locator('.error-message-container.error')).toBeVisible();
+})
