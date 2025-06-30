@@ -2,9 +2,8 @@ import {test, expect} from "@playwright/test";
 import { Login } from "../pages/login/Login";
 import { About } from "../pages/about/about";
 import { PlatformForTest } from "../pages/platformfortest/PlatformForTest";
-import { Student } from "../pages/login/Student";
 
-/*test('Login with Username and Password', async({page})=>{
+test('Login with Username and Password', async({page})=>{
     const login = new Login(page);
     await login.pageLoad();   
     await login.fillUsername("standard_user");
@@ -38,10 +37,7 @@ test('Login with Invalid Username and Password', async({page})=>{
     login.submitButton();
     await page.waitForSelector('.error-message-container.error', { state: 'visible' });
     await expect(page.locator('.error-message-container.error')).toBeVisible();
-})*/
-test('Login with Username and Password', async({page})=>{
-const student = new Student("Kavin", 32, "Testing", "Namakkal");
-student.display();
 })
+
 
 

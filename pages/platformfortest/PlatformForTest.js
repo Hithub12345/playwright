@@ -1,7 +1,7 @@
 class PlatformForTest {
   constructor(page) {
     this.page = page;
-    this.getStartFree = 'button:has-text("Get started free")cls';
+    this.getStartFree = 'button:has-text("Get started free")';
     
   }
   async clickGetStartFree() {
