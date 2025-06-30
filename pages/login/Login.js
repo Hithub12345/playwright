@@ -10,7 +10,6 @@ class Login {
     await this.page.goto(this.url);
   }
   async fillUsername(userName) {
-    console.log('UserName is:',userName);
     await this.page.fill(this.usernameInput, userName);
   }
   async fillPassword(userPassword) {
