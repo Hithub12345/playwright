@@ -10,6 +10,7 @@ test('Login with Username and Password', async({page})=>{
     // Locate all `.item` elements under `.inventory-list`
     const items = page.locator('.inventory_list .inventory_item');
    // Assert that there are exactly 6 items
-       await expect(items).toHaveCount(6);
+       await expect(items).toHaveCount(6)
+
 
 })
