@@ -6,11 +6,11 @@ test('Login with Username and Password', async({page})=>{
     await page.click('[type="submit"]');
     await expect(page.locator('text=Logout')).toBeVisible();
     await expect(page.locator('text=About')).toBeVisible();
-    await expect(page.locator('text=Swag Labs')).toBeVisible();
+    await expect(page.locator('text=Swag Labs')).toBeVisible()
     // Locate all `.item` elements under `.inventory-list`
-    const items = page.locator('.inventory_list .inventory_item');
+    const items = page.locator('.inventory_list .inventory_item')
    // Assert that there are exactly 6 items
-       await expect(items).toHaveCount(6)
+       await expect(items).toHaveCount(6);
 
 
 })
